@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    background-color: #EBEBEB;
+}
+
+.row {
+  padding: 0 120px;
+}
+
+.carousel {
+  background-color: #EBEBEB;
+  display: flex;
+  flex-direction: row;
+  column-gap: .5em;
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 0px 5px #ccc;
+  height: 100%;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: .5em;
+  justify-content: space-between;
+  background-color: #fff;
+  overflow: hidden;
+  white-space: normal;
+}
+  
+.card > img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card > h3 {
+  font-size: 14px;
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.card > p {
+  font-size: 14px;
+  color: #0077F9;
+}
+
+.card > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card > a > p {
+  color: #0077F9;
+  background-color: #fff;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #0077F9;
+  border-radius: 5px;
+}
+
+.card > a :hover {
+  background-color: #004894; 
+  border: none;
+}
+
+.card > a > p:hover {
+  color: #fff;
+  
+}
+
+.texto-descatado {
+  padding: 50px 120px 20px 120px;
+  letter-spacing: 1px;
+}
+  
+.card h2, .card p{
+    background-color: #fff;
+}
+
+
+
+/* FLECHAS */
+
+.flecha-izquierda {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  top: calc(40%);
+  left: 95px;
+  border-radius: 50%;
+  z-index: 200;
+  background-color: #fff;
+  border: 2px solid #0077f9;
+  color: #0077f9;
+  cursor: pointer;
+}
+
+.flecha-izquierda > i {
+  background-color: #fff;
+}
+
+.flecha-derecha {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  top: calc(40%);
+  right: 95px;
+  border-radius: 50%;
+  z-index: 200;
+  background-color: #fff;
+  border: 2px solid #0077f9;
+  color: #0077f9;
+  cursor: pointer;
+}
+
+.flecha-derecha > i {
+  background-color: #fff;
+}
+
+.flecha-derecha:hover, .flecha-izquierda:hover {
+  box-shadow: 0px 0px 5px #6d6d6d;
+
+}
+
+
+@media screen and (max-width: 1133px) {
+
+  .texto-descatado {
+    padding: 50px 70px 20px 70px;
+  }
+  .row {
+    padding: 0 70px;
+  }
+
+   .flecha-derecha {
+    right: 45px;  
+  }
+
+  .flecha-izquierda {
+    left: 45px;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .row {
+    padding: 0 40px;
+  }
+  .texto-descatado {
+    padding: 30px 40px 20px 40px;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+
+  .flecha-derecha {
+    right: 15px;  
+    top: calc(35%);
+  }
+
+  .flecha-izquierda {
+    left: 15px;
+    top: calc(35%);
+
+  }
+}
