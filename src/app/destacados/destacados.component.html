@@ -11,7 +11,7 @@
             <img [src]="componente.imagen" alt="{{ componente.nombre }}">
             <h3 class="card-title">{{ componente.nombre }}</h3>
             <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>
-            <a  ><p>Agregar</p></a >
+            <a href="#" (click)="agregarAlCarrito(componente)"><p>Agregar</p></a >
       </div>
       </div> 
     </div>

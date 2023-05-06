@@ -1,0 +1,35 @@
+ 
+<div class="carrito-de-compras">
+    <h3 class="texto-finalizar-compras">Finalizar Compras</h3>
+    <div class="container" *ngIf="componentesCarrito.length > 0">
+      <div class="texto-productos">
+        <p class="productos-cantidad">Cantidad</p>
+        <p class="productos-precio">Precio</p>
+      </div>
+  
+      <div class="container-product">
+      <div class="product" *ngFor="let componente of componentesCarrito ">
+        <div class="product-imagen"><img [src]="componente.imagen"></div>
+        <div class="product-nombre">{{componente.nombre}}</div>
+        <div class="detalles-producto">
+          <div class="product-cantidad">
+              <div class="cantidad">
+                <button (click)="restarCantidad(componente)"><p>-</p></button> 
+                <p>{{componente.cantidad}}</p>
+                <button (click)="sumarCantidad(componente)"><p>+</p></button>
+              </div>
+          </div>
+        <div class="product-precio">$ {{componente.precioAc.toFixed(3)}}</div>
+      </div>
+      </div>
+      </div>
+  
+      <div class="comprar">
+      <p class="texto-precio-total">Total: $ {{ calcularPrecioTotal().toFixed(3) }}</p>
+      <button class="boton-comprar">Comprar</button> 
+      </div>
+    </div>
+    <p *ngIf="componentesCarrito.length === 0" class="texto-carrito-vacio">No hay productos en el carrito.</p>
+  </div>
+  
+  

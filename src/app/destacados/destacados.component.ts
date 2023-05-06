@@ -10,6 +10,7 @@ import { ComponenteService } from '../componente.service';
 export class DestacadosComponent implements OnInit {
 
   componentes:Componente[];
+  componentesCarrito: any[] = [];
 
   constructor(private componenteService:ComponenteService){  }
 
@@ -17,9 +18,18 @@ export class DestacadosComponent implements OnInit {
     this.obtenerComponente()
   }
 
-  private obtenerComponente() {
+   obtenerComponente() {
+
     this.componenteService.obtenerListaDeComponentes().subscribe(data => {
       this.componentes = data
+      // console.log(typeof data);
     })
+   }
+
+   agregarAlCarrito(componente: any) {
+    this.componenteService.agregarAlCarrito(componente);
   }
+  
+  
+
 }

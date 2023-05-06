@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DestacadosComponent } from './destacados/destacados.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DestacadosComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
