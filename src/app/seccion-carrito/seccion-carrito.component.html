@@ -1,1 +1,5 @@
-<p>seccion-carrito works!</p>
+<h2>Carrito</h2>
+
+<ul>
+  <li *ngFor="let componente of componentesCarrito">{{componente.nombre}} - {{componente.precioAc | currency}}</li>
+</ul>

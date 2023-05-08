@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Componente } from './componente';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ComponenteService {
   componentesCarrito: any[] = [];
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router:Router) { }
 
   // metodo que nos sirve para obtener los componentes
   obtenerListaDeComponentes():Observable<Componente[]> {
@@ -44,12 +45,12 @@ agregarAlCarrito(componente: any) {
     componente.cantidad = 1;
     componente.precioAc = componente.precio;
     this.componentesCarrito.push(componente);
+    
   }
 
   // Emitir el evento con el array actualizado
   this.componenteAgregado.emit(this.componentesCarrito);
+    
 }
 
-  // Emitir el evento con el array actualizado
-  // this.componenteAgregado.emit(this.componentesCarrito);
 }

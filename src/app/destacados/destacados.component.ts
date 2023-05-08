@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Componente } from '../componente';
 import { ComponenteService } from '../componente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-destacados',
@@ -12,7 +13,7 @@ export class DestacadosComponent implements OnInit {
   componentes:Componente[];
   componentesCarrito: any[] = [];
 
-  constructor(private componenteService:ComponenteService){  }
+  constructor(private componenteService:ComponenteService, private router:Router){  }
 
   ngOnInit(): void {
     this.obtenerComponente()
