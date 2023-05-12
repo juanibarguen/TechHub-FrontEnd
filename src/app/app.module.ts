@@ -11,11 +11,14 @@ import { SeccionHomeComponent } from './seccion-home/seccion-home.component';
 import { SeccionCarritoComponent } from './seccion-carrito/seccion-carrito.component';
 import { SeccionAdministradorComponent } from './seccion-administrador/seccion-administrador.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AgregarComponenteComponent } from './agregar-componente/agregar-componente.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes:Routes = [
   {path:'',component:SeccionHomeComponent},
   {path:'carrito',component:SeccionCarritoComponent},
-  {path:'administrador',component:SeccionAdministradorComponent}
+  {path:'administrador',component:SeccionAdministradorComponent},
+  {path:'administrador/agregar-componente', component:AgregarComponenteComponent}
 
 ]
 
@@ -27,13 +30,15 @@ const appRoutes:Routes = [
     CarritoComponent,
     SeccionHomeComponent,
     SeccionCarritoComponent,
-    SeccionAdministradorComponent
+    SeccionAdministradorComponent,
+    AgregarComponenteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

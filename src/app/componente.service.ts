@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class ComponenteService {
 
   componenteAgregado = new EventEmitter<any>();
+  cantidadActualizada = new EventEmitter<number>();
 
   //url que obtiene el lista de todos los componentes en el backend
   private baseURL = "http://localhost:8080/api/v1/componentes";
@@ -25,9 +26,6 @@ export class ComponenteService {
 
   }
 
-// agregarAlCarrito(componente: any) {
-//   this.componentesCarrito.push(componente);
-// }
 
 obtenerComponentesCarrito() {
   return this.componentesCarrito;

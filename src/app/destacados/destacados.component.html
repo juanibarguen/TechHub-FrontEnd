@@ -7,7 +7,7 @@
 
   <div class="carousel">
     <div class="card-container" *ngFor="let componente of componentes">
-      <div class="card" *ngIf="componente.destacado">
+      <div class="card" *ngIf="componente.destacado ">
             <img [src]="componente.imagen" alt="{{ componente.nombre }}">
             <h3 class="card-title">{{ componente.nombre }}</h3>
             <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>

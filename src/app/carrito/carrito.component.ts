@@ -53,10 +53,6 @@ export class CarritoComponent implements OnInit {
     return total;
   }
 
-  getComponentesCarrito() {
-    return this.componentesCarrito;
-  }
-
    
   }
 

@@ -12,6 +12,7 @@ export class DestacadosComponent implements OnInit {
 
   componentes:Componente[];
   componentesCarrito: any[] = [];
+  cantidad: number = 0;
 
   constructor(private componenteService:ComponenteService, private router:Router){  }
 
@@ -29,6 +30,7 @@ export class DestacadosComponent implements OnInit {
 
    agregarAlCarrito(componente: any) {
     this.componenteService.agregarAlCarrito(componente);
+
   }
   
   

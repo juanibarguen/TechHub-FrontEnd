@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComponenteService } from '../componente.service';
 
 @Component({
@@ -6,22 +6,39 @@ import { ComponenteService } from '../componente.service';
   templateUrl: './seccion-carrito.component.html',
   styleUrls: ['./seccion-carrito.component.css']
 })
-export class SeccionCarritoComponent implements OnInit {
+export class SeccionCarritoComponent {
   componentesCarrito: any[] = [];
 
-  constructor(private componenteService: ComponenteService) { }
+  constructor(private componenteService: ComponenteService) {}
 
-  ngOnInit(): void {
-
-    // Suscribirse al evento componenteAgregado del servicio
-    this.componenteService.componenteAgregado.subscribe(
-      (componentesCarrito: any[]) => {
-        this.componentesCarrito = componentesCarrito;
-      }
-    );
-    
-    
+  ngOnInit() {
+    this.componentesCarrito = this.componenteService.obtenerComponentesCarrito();
     console.log(this.componentesCarrito);
     
+  }
+  
+  restarCantidad(componente: any): void {
+    if (componente.cantidad > 1) {
+      componente.cantidad--;
+      componente.precioAc = componente.precio * componente.cantidad;
+    } else {
+      if (confirm('¿Desea eliminar el componente del carrito de compras?')) {
+        const index = this.componentesCarrito.indexOf(componente);
+        this.componentesCarrito.splice(index, 1);
+      }
+    }
+  }
+  
+  sumarCantidad(componente: any): void {
+    componente.cantidad++;
+    componente.precioAc = componente.precio * componente.cantidad;
+  }
+
+  calcularPrecioTotal(): number {
+    let total = 0;
+    for (let i = 0; i < this.componentesCarrito.length; i++) {
+      total += this.componentesCarrito[i].precioAc;
+    }
+    return total;
   }
 }

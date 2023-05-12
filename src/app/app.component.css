@@ -8,7 +8,7 @@
     display: flex;
     width: 100%;
     height: 70px;
-    background-color: dimgrey;
+    background-color: rgb(82, 82, 82);
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
@@ -32,3 +32,38 @@
     flex-direction: row;
     column-gap: 15px;
 }
+
+.nav-links > div {
+    width: 25px;
+}
+
+.cart, .user {
+    width: 25px;
+    margin: 0 5px;
+}
+
+.container-cart {
+    position: relative;
+}
+
+.container-num{ 
+    display: flex;
+    height: 18px;
+    width: 18px;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.container-num > p{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
