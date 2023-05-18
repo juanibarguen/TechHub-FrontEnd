@@ -18,7 +18,7 @@
                 <p>{{componente.cantidad}}</p>
                 <p  (click)="sumarCantidad(componente)" >+</p>
               </div>
-              <div class="disponibles"><p>778 disponibles</p></div>
+              <div class="disponibles"><p>{{componente.stock}} disponibles</p></div>
           </div>
         <div class="product-precio">$ {{componente.precioAc.toFixed(3)}}</div>
       </div>
@@ -32,9 +32,9 @@
       <button class="boton-comprar">Comprar</button> 
       </div>
 
-    <div class="v" *ngIf="componentesCarrito.length === 0" >
+    <div class="carrito-vacio" *ngIf="componentesCarrito.length === 0" >
       <p class="">No hay productos en el carrito.</p>
-      <button routerLink="/">Ver productos</button>
+      <button routerLink="/productos">Ver productos</button>
     </div>
   </div>
   </section>  

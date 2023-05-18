@@ -1,0 +1,73 @@
+<div class="container-img">
+    <img class="subcategoria-default" src="assets/subcategoria_default.jpg" alt="">
+
+</div>
+
+
+<section class="container-major">
+    <section class="container">
+
+        <div class="left">
+            <div class="categorias">
+                <a routerLink="/productos" class="categorias-text" >Categorías</a>
+
+                <a [routerLink]="['/productos', 'Motherboards']">Motherboards</a>
+                <a [routerLink]="['/productos', 'Procesadores']">Procesadores</a>
+                <a [routerLink]="['/productos', 'Gabinetes']">Gabinetes</a>
+                <a [routerLink]="['/productos', 'Almacenamiento']">Almacenamiento</a>
+                <a [routerLink]="['/productos', 'Fuentes']">Fuentes</a>
+                <a [routerLink]="['/productos', 'Placas de video']">Placas de video</a>
+                <a [routerLink]="['/productos', 'Perifericos']">Periféricos</a>
+                <a [routerLink]="['/productos', 'Monitores']">Monitores</a>
+                <a [routerLink]="['/productos', 'Memorias RAM']">Memorias RAM</a>
+
+            </div>
+
+            <div class="img-categorias">
+                <img src="./categorias-img2.jpeg" alt="">
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div class="filtros">
+                <select class="form-select" [(ngModel)]="filtro" (ngModelChange)="aplicarFiltro()">
+                    <option value='Todos'>Todos</option>
+                    <option value="Destacados">Destacados</option>
+                    <option value="MayorPrecio">Mayor precio</option>
+                    <option value="MenorPrecio">Menor precio</option>
+                </select>
+            </div>
+
+
+            <div class="componentes">
+                <div class="componentes-card" *ngFor="let componente of componentes">
+                    <div class="product-imagen">
+                        <img [src]="componente.imagen">
+                    </div>
+                    <div class="product-texts">
+
+                        <p class="product-nombre">{{ componente.nombre }}</p>
+
+                        <div class="stock">
+                            <p class="poco-stock" *ngIf="componente.stock < 20">Poco stock</p>
+                            <p class="en-stock" *ngIf="componente.stock >= 20">En stock</p>
+                        </div>
+
+                        <p class="product-precio">${{ componente.precio.toFixed(3) }}</p>
+
+                        <div class="product-buttons">
+                            <a class="comprar">Comprar</a>
+                            <a class="agregar" (click)="agregarAlCarrito(componente)">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mensaje-vacio" *ngIf="!componentes || componentes.length === 0">
+                No se encontraron productos en esta categoría.
+            </div>
+        </div>
+
+    </section>
+</section>

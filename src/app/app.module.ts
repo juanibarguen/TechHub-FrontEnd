@@ -13,14 +13,21 @@ import { SeccionAdministradorComponent } from './seccion-administrador/seccion-a
 import { RouterModule, Routes } from '@angular/router';
 import { AgregarComponenteComponent } from './agregar-componente/agregar-componente.component';
 import { FormsModule } from '@angular/forms';
+import { ComponentesComponent } from './componentes/componentes.component';
+import { ProductosComponent } from './productos/productos.component';
 
-const appRoutes:Routes = [
-  {path:'',component:SeccionHomeComponent},
-  {path:'carrito',component:SeccionCarritoComponent},
-  {path:'administrador',component:SeccionAdministradorComponent},
-  {path:'administrador/agregar-componente', component:AgregarComponenteComponent}
+const appRoutes: Routes = [
+  { path: '', component: SeccionHomeComponent },
+  { path: 'carrito', component: SeccionCarritoComponent },
+  { path: 'administrador', component: SeccionAdministradorComponent },
+  { path: 'administrador/agregar-componente', component: AgregarComponenteComponent },
+  { path: 'componentes', component: ComponentesComponent },
+  { path: 'productos/:categoria', component: ProductosComponent },
+  { path: 'productos', component: ProductosComponent }
+];
 
-]
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +38,9 @@ const appRoutes:Routes = [
     SeccionHomeComponent,
     SeccionCarritoComponent,
     SeccionAdministradorComponent,
-    AgregarComponenteComponent
+    AgregarComponenteComponent,
+    ComponentesComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

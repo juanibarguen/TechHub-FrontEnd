@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorias',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
+
+constructor(private router: Router) {}
+
 
 }

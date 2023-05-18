@@ -7,7 +7,6 @@
 .container-carrito {
     width: 100%;
     background-color: #EBEBEB;
-    height: 90vh;
 }
 
 .texto-finalizar-compras {
@@ -29,9 +28,9 @@
     width: 100%;
     /* min-height: 400px; */
     background-color: #EBEBEB;
-    max-height: 350px;
-    overflow-y: auto;
-  white-space: nowrap;
+    /* max-height: 350px; */
+    /* overflow-y: auto; */
+  /* white-space: nowrap; */
 }
 
 .container-product {
@@ -256,4 +255,11 @@
     width: 20px;
     background-color: #fff;
     color: red;
+}
+
+.carrito-vacio{
+    width: 100%;
+    background-color: #fff;
+    padding: 200px 0;
+    text-align: center;
 }

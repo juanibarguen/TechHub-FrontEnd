@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ComponenteService } from '../componente.service';
 import { Componente } from '../componente';
+import { Route, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-seccion-administrador',
@@ -14,7 +17,7 @@ export class SeccionAdministradorComponent implements OnInit {
 
   selectedCategory: string = '';
 
-  constructor(private componenteService:ComponenteService ){ }
+  constructor(private componenteService:ComponenteService, private router:Router,private http: HttpClient ){ }
 
   ngOnInit(): void {
     this.obtenerComponente()
@@ -33,6 +36,20 @@ export class SeccionAdministradorComponent implements OnInit {
   }
 
 
+  eliminarComponente(id: number) {
+    this.http.delete(`http://localhost:8080/api/v1/componentes/${id}`).subscribe(
+      (response) => {
+        console.log('Componente eliminado con éxito:', response);
+        // actualizar la lista de componentes después de eliminar
+
+      },
+      (error) => {
+        console.error('Error al eliminar componente:', error);
+      }
+    );
+  }
+  
+
   filtrarPorCategoria() {
     if (this.selectedCategory === '') {
       this.componentesFiltrados = this.componentes;
@@ -44,6 +61,6 @@ export class SeccionAdministradorComponent implements OnInit {
   onCategorySelected() {
     this.filtrarPorCategoria(); // filtra los componentes cuando se selecciona una categoría
   }
-  
+
 
 }
