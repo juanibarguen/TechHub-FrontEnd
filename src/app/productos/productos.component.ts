@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Componente } from '../componente';
 import { ComponenteService } from '../componente.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -15,7 +15,8 @@ export class ProductosComponent implements OnInit {
 
   constructor(
     private componenteService: ComponenteService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ){ }
   
   ngOnInit(): void {
@@ -31,10 +32,7 @@ export class ProductosComponent implements OnInit {
   }
 
   obtenerComponentesCarrito() {
-
-      const a = this.componenteService.obtenerComponentesCarrito();
-      
-     
+      const componentesCarrito = this.componenteService.obtenerComponentesCarrito();
   }
 
   obtenerComponentes() {
@@ -42,11 +40,12 @@ export class ProductosComponent implements OnInit {
       this.componenteService.obtenerListaDeComponentes().subscribe(data => {
         this.componentes = data.filter(componente => componente.categoria === this.categoria);
         console.log(this.componentes);
+
       });
     } else {
       this.componenteService.obtenerListaDeComponentes().subscribe(data => {
         this.componentes = data;
-        console.log(this.componentes);
+        // console.log(this.componentes);
       });
     }
   }
@@ -64,4 +63,10 @@ export class ProductosComponent implements OnInit {
       this.componentes = this.componentes.sort((a, b) => a.precio - b.precio);
     }
   }
+
+  nombreFormateado(nombre: string): string {
+    return nombre.toLowerCase().replace(/\s+/g, '-');
+  }
+
+
 }

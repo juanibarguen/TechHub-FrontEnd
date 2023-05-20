@@ -107,6 +107,7 @@ section {
 
 .product-texts>p {
     background-color: #fff;
+    padding-right: 15px;
 }
 
 .product-texts {
@@ -174,4 +175,20 @@ section {
 .categorias-text {
     font-weight: 600;
     margin-top: 10px;
+}
+
+.product-nombre:hover {
+    cursor: pointer;
+}
+
+.product-imagen:hover {
+    cursor: pointer;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 250px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #6a6a6a;
 }

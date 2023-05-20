@@ -34,5 +34,8 @@ export class DestacadosComponent implements OnInit {
   }
   
   
+  nombreFormateado(nombre: string): string {
+    return nombre.toLowerCase().replace(/\s+/g, '-');
+  }
 
 }

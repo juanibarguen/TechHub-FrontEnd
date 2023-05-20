@@ -8,8 +8,8 @@
   <div class="carousel">
     <div class="card-container" *ngFor="let componente of componentes">
       <div class="card" *ngIf="componente.destacado ">
-            <img [src]="componente.imagen" alt="{{ componente.nombre }}">
-            <h3 class="card-title">{{ componente.nombre }}</h3>
+            <img [src]="componente.imagen" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">
+            <h3 class="card-title" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">{{ componente.nombre }}</h3>
             <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>
             <a href="#" (click)="agregarAlCarrito(componente)"><p>Agregar</p></a >
       </div>

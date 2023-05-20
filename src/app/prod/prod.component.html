@@ -1,0 +1,69 @@
+
+<section class="container"  *ngIf="componente">
+
+    <div class="links">
+        <p class="link-inicio" routerLink="">HOME</p>
+        <p>/</p>
+        <p class="link-categoria" [routerLink]="['/productos', componente.categoria]">{{transformarUpper(componente.categoria)}}</p>
+        <p>/</p>
+        <p class="nombreProductoActual">{{componente.nombre}}</p>
+    </div>
+    <div class="detalles-producto">
+        <div class="producto-imagenes">
+            <img [src]="componente.imagen">
+            <div class="producto-mas-imagenes">
+                <img [src]="componente.imagen">
+                <img [src]="componente.imagen">
+                <img [src]="componente.imagen">
+            </div>
+        </div>
+
+        <div class="producto-textos">
+            <p class="texto-nombre">{{componente.nombre}}</p>
+            <p class="texto-cod-prod">codigo de producto: 4529001</p>
+            <p class="texto-mdp">Precio efectivo o transferencia:</p>
+            <p class="texto-precio">${{componente.precio.toFixed(3)}}</p>
+            <p class="texto-cuotas">¡12 cuotas sin interes de: ${{valorCuotas.toFixed(3)}}!</p>
+            <p>Unico metodo de pago por el momento</p>
+            <div class="stock">
+                <p class="poco-stock" *ngIf="componente.stock < 20">Poco stock</p>
+                <p class="en-stock" *ngIf="componente.stock >= 20">En stock</p>
+            </div>
+            <div class="botones-cantidad">
+                <p class="menos" (click)="restarCantidad()">-</p>
+                <p class="cantidad">{{cantidad}}</p>
+                <p class="mas" (click)="sumarCantidad()">+</p>
+              </div>
+            <div class="botones">
+                <a href="#" class="comprar" [class.desabilitado]="cantidad == 0">Comprar</a>
+                <!-- <a href="#">Comprar</a> -->
+
+                <a href="#" class="agregar">Agregar al carrito</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="descripcion">
+        <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusantium laudantium, harum ab doloribus id labore, blanditiis quisquam velit pariatur adipisci rem officia quia enim quas temporibus voluptates magnam incidunt, cum voluptatum in ducimus. Ea libero saepe atque earum nesciunt magni quos incidunt molestias illo doloremque. In tempora quod, iure veritatis reiciendis ipsam necessitatibus labore laudantium, unde blanditiis minima asperiores vero illum. Dolores, mollitia harum! Recusandae perspiciatis sed ad omnis iste placeat tempore maxime nulla autem nobis. Consequuntur itaque cupiditate autem corporis numquam? Suscipit odit nam tempora optio temporibus pariatur fuga dolore, rerum quod, doloremque fugiat velit dicta aut. Blanditiis.
+
+        </p>
+        
+    </div>
+
+    <div class="productos-relacionados">
+        <p class="texto-prod-rel">Productos relacionados</p>
+        <div class="container-productos-relacionado" >
+            <div class="card-producto-relacionado" *ngFor="let producto of productosRelacionados">
+                <img [src]="producto.imagen" [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]">
+                <p class="prod-rel-nombre" 
+                [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]"
+                >{{ producto.nombre }}</p>
+                <p class="prod-rel-precio">${{producto.precio.toFixed(3)}}</p>
+                <button class="prod-rel-btn">Agregar</button>
+            </div>
+            
+          </div>
+    </div>
+
+</section>

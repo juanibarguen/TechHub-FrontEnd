@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DestacadosComponent } from './destacados/destacados.component';
@@ -15,19 +14,18 @@ import { AgregarComponenteComponent } from './agregar-componente/agregar-compone
 import { FormsModule } from '@angular/forms';
 import { ComponentesComponent } from './componentes/componentes.component';
 import { ProductosComponent } from './productos/productos.component';
+import { ProdComponent } from './prod/prod.component';
 
 const appRoutes: Routes = [
   { path: '', component: SeccionHomeComponent },
-  { path: 'carrito', component: SeccionCarritoComponent },
+  { path: 'finalizar-compra', component: SeccionCarritoComponent },
   { path: 'administrador', component: SeccionAdministradorComponent },
   { path: 'administrador/agregar-componente', component: AgregarComponenteComponent },
   { path: 'componentes', component: ComponentesComponent },
   { path: 'productos/:categoria', component: ProductosComponent },
-  { path: 'productos', component: ProductosComponent }
+  { path: 'productos', component: ProductosComponent },
+  { path: 'producto/:categoria/:id/:nombre', component: ProdComponent }
 ];
-
-
-
 
 @NgModule({
   declarations: [
@@ -40,7 +38,8 @@ const appRoutes: Routes = [
     SeccionAdministradorComponent,
     AgregarComponenteComponent,
     ComponentesComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProdComponent
   ],
   imports: [
     BrowserModule,
