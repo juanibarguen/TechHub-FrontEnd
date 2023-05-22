@@ -60,6 +60,12 @@ export class ComponenteService {
     // Emitir el evento con el array actualizado
     this.componenteAgregado.emit(this.componentesCarrito);
   }
+
+  registrarComponente(componente: Componente) : Observable <Object> {
+
+    return this.httpClient.post(`${this.baseURL}`, componente)
+
+  }
   
 
 }

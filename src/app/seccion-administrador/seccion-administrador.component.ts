@@ -17,44 +17,45 @@ export class SeccionAdministradorComponent implements OnInit {
 
   selectedCategory: string = '';
 
-  constructor(private componenteService:ComponenteService, private router:Router,private http: HttpClient ){ }
+  constructor(
+    private componenteService:ComponenteService,
+     private router:Router,
+     private http: HttpClient
+     ){}
 
   ngOnInit(): void {
     this.obtenerComponente()
-    
     this.componenteService.obtenerListaDeComponentes().subscribe(respuesta => {
       this.componentes = respuesta;
+      
     })
-    
   }
 
   obtenerComponente() {
     this.componenteService.obtenerListaDeComponentes().subscribe(data => {
       this.componentes = data;
       this.filtrarPorCategoria(); // filtra los componentes cuando se obtienen del servicio
+
     });
   }
 
-
   eliminarComponente(id: number) {
-    this.http.delete(`http://localhost:8080/api/v1/componentes/${id}`).subscribe(
-      (response) => {
-        console.log('Componente eliminado con éxito:', response);
-        // actualizar la lista de componentes después de eliminar
+    if (confirm('¿Desea eliminar el componente de la base de datos?')) {
+      this.componenteService.eliminarComponente(id).subscribe(dato => {
+        // console.log(dato);
+        this.obtenerComponente()
+      })
+    }
 
-      },
-      (error) => {
-        console.error('Error al eliminar componente:', error);
-      }
-    );
-  }
+  } 
   
-
   filtrarPorCategoria() {
     if (this.selectedCategory === '') {
       this.componentesFiltrados = this.componentes;
     } else {
       this.componentesFiltrados = this.componentes.filter(componente => componente.categoria === this.selectedCategory);
+      this.componentesFiltrados = this.componentes.filter(componente => componente.categoria === this.selectedCategory);
+
     }
   }
 
@@ -62,5 +63,8 @@ export class SeccionAdministradorComponent implements OnInit {
     this.filtrarPorCategoria(); // filtra los componentes cuando se selecciona una categoría
   }
 
+  transformarUpper(categoria: string): string {
+    return categoria.replace(/-/g, ' ').toUpperCase();
+  }
 
 }

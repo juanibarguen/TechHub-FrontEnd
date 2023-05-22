@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Componente } from '../componente';
+import { ComponenteService } from '../componente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-componente',
@@ -10,14 +12,29 @@ export class AgregarComponenteComponent implements OnInit {
 
   componente: Componente = new Componente()
 
-  constructor() {  }
+  constructor(private componenteService: ComponenteService , private router: Router) {  }
 
   ngOnInit(): void {
     
   }
+
+  guardarComponente(){
+    this.componenteService.registrarComponente(this.componente).subscribe(dato => {
+      console.log(dato);
+      this.volverListaComponentes();
+      
+    });
+  }
+
   
+  
+  volverListaComponentes() {
+    this.router.navigate(['/administrador'])
+  }
+
+
   onSubmit() {
-    console.log(this.componente);
+    this.guardarComponente();
 
   }
 }
