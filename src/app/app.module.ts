@@ -5,16 +5,16 @@ import { AppComponent } from './app.component';
 import { DestacadosComponent } from './destacados/destacados.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriasComponent } from './categorias/categorias.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { SeccionHomeComponent } from './seccion-home/seccion-home.component';
 import { SeccionCarritoComponent } from './seccion-carrito/seccion-carrito.component';
 import { SeccionAdministradorComponent } from './seccion-administrador/seccion-administrador.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AgregarComponenteComponent } from './agregar-componente/agregar-componente.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentesComponent } from './componentes/componentes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ProdComponent } from './prod/prod.component';
+import { ActualizarComponenteComponent } from './actualizar-componente/actualizar-componente.component';
 
 const appRoutes: Routes = [
   { path: '', component: SeccionHomeComponent },
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
   { path: 'componentes', component: ComponentesComponent },
   { path: 'productos/:categoria', component: ProductosComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'producto/:categoria/:id/:nombre', component: ProdComponent }
+  { path: 'producto/:categoria/:id/:nombre', component: ProdComponent },
+  { path: 'administrador/actualizar-componente/:id', component: ActualizarComponenteComponent}
 ];
 
 @NgModule({
@@ -32,21 +33,22 @@ const appRoutes: Routes = [
     AppComponent,
     DestacadosComponent,
     CategoriasComponent,
-    CarritoComponent,
     SeccionHomeComponent,
     SeccionCarritoComponent,
     SeccionAdministradorComponent,
     AgregarComponenteComponent,
     ComponentesComponent,
     ProductosComponent,
-    ProdComponent
+    ProdComponent,
+    ActualizarComponenteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

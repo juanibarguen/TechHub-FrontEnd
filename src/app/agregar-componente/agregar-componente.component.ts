@@ -27,7 +27,6 @@ export class AgregarComponenteComponent implements OnInit {
   }
 
   
-  
   volverListaComponentes() {
     this.router.navigate(['/administrador'])
   }

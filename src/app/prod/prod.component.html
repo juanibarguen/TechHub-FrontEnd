@@ -22,9 +22,9 @@
             <p class="texto-nombre">{{componente.nombre}}</p>
             <p class="texto-cod-prod">codigo de producto: 4529001</p>
             <p class="texto-mdp">Precio efectivo o transferencia:</p>
+            <p class="unico-metodo">Unico metodo de pago por el momento</p>
             <p class="texto-precio">${{componente.precio.toFixed(3)}}</p>
             <p class="texto-cuotas">¡12 cuotas sin interes de: ${{valorCuotas.toFixed(3)}}!</p>
-            <p>Unico metodo de pago por el momento</p>
             <div class="stock">
                 <p class="poco-stock" *ngIf="componente.stock < 20">Poco stock</p>
                 <p class="en-stock" *ngIf="componente.stock >= 20">En stock</p>

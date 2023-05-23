@@ -5,13 +5,13 @@
 <div class="row">
   <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left" aria-hidden="true"></i></button>
 
-  <div class="carousel">
+  <div class="carousel" id="carrousel">
     <div class="card-container" *ngFor="let componente of componentes">
-      <div class="card" *ngIf="componente.destacado ">
+      <div class="card" *ngIf="componente.destacado">
             <img [src]="componente.imagen" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">
             <h3 class="card-title" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">{{ componente.nombre }}</h3>
             <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>
-            <a href="#" (click)="agregarAlCarrito(componente)"><p>Agregar</p></a >
+            <a (click)="agregarAlCarrito(componente)"><p>Agregar</p></a >
       </div>
       </div> 
     </div>

@@ -46,8 +46,11 @@ export class SeccionAdministradorComponent implements OnInit {
         this.obtenerComponente()
       })
     }
-
   } 
+
+  actualizarComponente(id:number) {
+    this.router.navigate([`administrador/actualizar-componente`, id])
+  }
   
   filtrarPorCategoria() {
     if (this.selectedCategory === '') {

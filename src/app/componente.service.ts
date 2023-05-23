@@ -6,9 +6,11 @@ import { Observable } from 'rxjs';
 import { Componente } from './componente';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ComponenteService {
   componenteAgregado = new EventEmitter<any>();
   cantidadActualizada = new EventEmitter<number>();
@@ -34,6 +36,11 @@ export class ComponenteService {
   obtenerComponentesCarrito() {
     return this.componentesCarrito;
   }
+
+  obtenerComponentePorId(id: number): Observable<Componente> {
+    return this.httpClient.get<Componente>(`${this.baseURL}/${id}`);
+  }
+  
 
   agregarAlCarrito(componente: any) {
     let index = this.componentesCarrito.findIndex(c => c.id === componente.id);
@@ -62,10 +69,14 @@ export class ComponenteService {
   }
 
   registrarComponente(componente: Componente) : Observable <Object> {
-
     return this.httpClient.post(`${this.baseURL}`, componente)
-
   }
+
+  actualizarComponente(id: number, componente: Componente): Observable<Object> {
+    componente.destacado == true ? 1 : 0 
+    return this.httpClient.put(`${this.baseURL}/${id}`, componente);
+  }
+  
   
 
 }
