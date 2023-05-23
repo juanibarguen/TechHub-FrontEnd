@@ -26,6 +26,7 @@
             <p class="titulo-precio">Precio</p>
             <p class="titulo-acciones">Acciones</p>
         </div>
+            <div class="container-list">
         <div class="productos"*ngFor="let componente of componentesFiltrados" >
             <!-- <div class="product-imagen"><img [src]="componente.imagen"></div> -->
             <div class="product-id">{{componente.id}}</div>
@@ -39,5 +40,6 @@
                 <button class="acciones-eliminar" (click)="eliminarComponente(componente.id)">X</button>
             </div>
         </div>
+    </div>
     </div>
 </section>
