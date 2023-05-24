@@ -1,0 +1,95 @@
+.section-marcas {
+    padding: 0 120px;
+    margin: 0 auto;
+    background-color: #ebebeb;
+}
+
+@media screen and (max-width: 1133px){
+    .section-marcas {
+        padding: 0 70px;
+    }
+
+}
+
+.text-marcas {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 30px 0 20px 0;
+}
+.container-marcas {
+    display: flex;
+    column-gap: 1em;
+    overflow: scroll;
+    position: relative;
+}
+
+
+.card-marca {
+    width: 300px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.bg-img > img{
+    width: 300px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.related-img {
+    width: 300px;
+    height: 150px;
+    /* background-color: #e68989; */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.title-img {
+    position: absolute;
+    background-color: #fff;
+    left: 20px;
+    top: 70px;
+    width: 120px;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+}
+
+.title-img > img {
+    width: 120px;
+}
+
+.btn {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0077F9;
+}
+
+.red {
+    width: 90px;
+    height: 90px;
+    background-color: red;
+}
+
+.related-img > a > img {
+    width: 90px;
+}
+
+.related-img > a  {
+    width: 90px;
+}
+
+.card-marca:hover {
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.274);
+    z-index: 200;
+  }
+
+  .container-cards {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }

@@ -10,5 +10,6 @@ export class Componente {
     precio:number;
     stock:number;
     destacado:boolean;
+  marca: string;
     
 }

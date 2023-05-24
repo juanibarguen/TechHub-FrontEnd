@@ -15,6 +15,7 @@ import { ComponentesComponent } from './componentes/componentes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ProdComponent } from './prod/prod.component';
 import { ActualizarComponenteComponent } from './actualizar-componente/actualizar-componente.component';
+import { MarcasComponent } from './marcas/marcas.component';
 
 const appRoutes: Routes = [
   { path: '', component: SeccionHomeComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     ComponentesComponent,
     ProductosComponent,
     ProdComponent,
-    ActualizarComponenteComponent
+    ActualizarComponenteComponent,
+    MarcasComponent
   ],
   imports: [
     BrowserModule,
