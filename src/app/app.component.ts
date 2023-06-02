@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ecommerce-v2';
-  constructor( ) {}
+  // title = 'ecommerce-v2';
+  constructor(private titleService:Title ) {}
+
 
     ngOnInit() {
+      this.titleService.setTitle('Inicio');
+
     }
 
   }
