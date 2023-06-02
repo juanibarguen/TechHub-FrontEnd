@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
 import { Componente } from '../componente';
 import { ComponenteService } from '../componente.service';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-prod',
@@ -24,8 +25,6 @@ export class ProdComponent {
     private route: ActivatedRoute,
     private titleService: Title
      ){ }
-
- 
     
     
     ngOnInit(): void {
@@ -45,9 +44,12 @@ export class ProdComponent {
           this.productosRelacionados = this.productosRelacionados.slice(0, 4);
         });
       });
-    
+
       this.titleService.setTitle(this.transformarUpper(this.nombre));
+      
     }
+
+    
 
     
   obtenerComponentes() {
@@ -69,7 +71,9 @@ export class ProdComponent {
     }
   }
 
-
+  cambiarTitulo(nombre: string) {
+    this.titleService.setTitle(this.transformarUpper(nombre));
+  }
 
   restarCantidad(){ 
     if(this.cantidad > 0) this.cantidad = this.cantidad - 1;
@@ -83,5 +87,7 @@ export class ProdComponent {
     this.componenteService.agregarAlCarrito(componente);
 
   }
+
+
 
 }

@@ -54,7 +54,7 @@
             <div class="card-producto-relacionado" *ngFor="let producto of productosRelacionados">
                 <img [src]="producto.imagen" [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]">
                 <p class="prod-rel-nombre" [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]">{{ producto.nombre }}</p>
-                <p class="prod-rel-precio">${{producto.precio.toFixed(3)}}</p>
+                <p class="prod-rel-pre  cio">${{producto.precio.toFixed(3)}}</p>
                 <button class="prod-rel-btn">Agregar</button>
             </div>
           </div>
