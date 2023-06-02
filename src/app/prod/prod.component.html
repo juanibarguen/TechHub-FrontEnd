@@ -8,6 +8,7 @@
         <p>/</p>
         <p class="nombreProductoActual">{{componente.nombre}}</p>
     </div>
+
     <div class="detalles-producto">
         <div class="producto-imagenes">
             <img [src]="componente.imagen">
@@ -36,17 +37,13 @@
               </div>
             <div class="botones">
                 <a href="#" class="comprar" [class.desabilitado]="cantidad == 0">Comprar</a>
-                <!-- <a href="#">Comprar</a> -->
-
                 <a href="#" class="agregar">Agregar al carrito</a>
             </div>
         </div>
-
     </div>
 
     <div class="descripcion">
         <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusantium laudantium, harum ab doloribus id labore, blanditiis quisquam velit pariatur adipisci rem officia quia enim quas temporibus voluptates magnam incidunt, cum voluptatum in ducimus. Ea libero saepe atque earum nesciunt magni quos incidunt molestias illo doloremque. In tempora quod, iure veritatis reiciendis ipsam necessitatibus labore laudantium, unde blanditiis minima asperiores vero illum. Dolores, mollitia harum! Recusandae perspiciatis sed ad omnis iste placeat tempore maxime nulla autem nobis. Consequuntur itaque cupiditate autem corporis numquam? Suscipit odit nam tempora optio temporibus pariatur fuga dolore, rerum quod, doloremque fugiat velit dicta aut. Blanditiis.
-
         </p>
         
     </div>
@@ -56,14 +53,12 @@
         <div class="container-productos-relacionado" >
             <div class="card-producto-relacionado" *ngFor="let producto of productosRelacionados">
                 <img [src]="producto.imagen" [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]">
-                <p class="prod-rel-nombre" 
-                [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]"
-                >{{ producto.nombre }}</p>
+                <p class="prod-rel-nombre" [routerLink]="['/producto', producto.categoria,producto.id, nombreFormateado(producto.nombre)]">{{ producto.nombre }}</p>
                 <p class="prod-rel-precio">${{producto.precio.toFixed(3)}}</p>
                 <button class="prod-rel-btn">Agregar</button>
             </div>
-            
           </div>
     </div>
 
 </section>
+<app-footer>

@@ -33,6 +33,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .producto-imagenes > img{
@@ -208,7 +209,7 @@
     background-color: #fff;
     width: 80%;
     margin: 1px auto 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 .container-productos-relacionado {
     display: flex;
@@ -227,9 +228,6 @@
     border-radius: 2px;
 }
 
-.card-producto-relacionado:hover {
-    box-shadow: 0px 0px 5px #6d6d6d;
-}
 
 .card-producto-relacionado > img{
     width: 100%;
