@@ -1,0 +1,86 @@
+
+
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 450px;
+    background-color: #ebebeb;
+    justify-content: space-around;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    justify-content: center;
+}
+.social-logos div svg { 
+    width: 20px;
+}
+
+.container-top {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.link-social {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
+
+#facebook {
+    width: 12px;
+    fill: #707070;
+}
+
+#tw, #yt, #linked, #ig {
+    width: 16px;
+    fill: #707070;
+}
+
+.social-logos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+}
+
+.social > p {
+    padding: 3em 0 1em 0;
+}
+
+
+.links a {
+    color: #707070;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links a:hover {
+    color: #363636;
+}
+
+.social-logos > a {
+    color: #707070;
+    text-decoration: none;
+}
+
+.social-logos > a:hover {
+    color: #363636;
+}
+
+.link-social svg {
+    width: 25px;
+    height: 25px;
+}
+
+.link-social p{
+    font-size: 14px;
+    font-weight: 500;
+}

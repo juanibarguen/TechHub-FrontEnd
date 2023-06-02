@@ -3,3 +3,136 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.nav-home {
+    width: 130px;
+}
+
+.nav-home > a{ 
+
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #2085f1;
+    font-weight: 700;
+    font-style:normal
+
+}
+.nav {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(27, 27,27);
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 50px
+}
+
+.nav-input-search {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 500px;
+}
+
+.nav-input-search > input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.nav-input-search > input:focus {
+    outline: none;
+  }
+
+  input[type="search"] {
+    padding-left: 15px; /* Ajusta el valor del padding según tus necesidades */
+  }
+
+.button-search {
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
+}
+
+.button-search > svg {
+    height: 25px;
+    width: 25px;
+    fill: #2085f1;
+    
+}
+
+.nav-links {
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    justify-content: center;
+}
+
+.nav-links > div {
+    width: 25px;
+}
+
+
+.container-user {
+    width: 27px;
+    height: 27px;
+}
+
+.container-cart {
+    display: flex;
+    align-items: flex-end;
+    height: 30px;
+    width: 30px;
+}
+
+.container-num{ 
+    display: flex;
+    height: 18px;
+    width: 18px;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.container-num > p{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.nav-links-router {
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-links-router > a {
+    text-decoration: none;
+    color: #b6b6b6;
+}
+
+.nav-links-router > a:hover {
+    color:#2085f1;
+}

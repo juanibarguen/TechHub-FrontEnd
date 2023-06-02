@@ -1,0 +1,264 @@
+
+.container {
+    /* width: 90%; */
+    background-color: #EBEBEB;
+    min-height: 100vh;
+    /* margin: 0 100px; */
+}
+.detalles-producto {
+    width: 80%;
+    background-color: #EBEBEB;
+    column-gap: 1px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    /* min-height: 90vh; */
+    height: 600px;
+}
+
+.producto-mas-imagenes {
+    /* margin-top: 50px; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: space-evenly;
+}
+
+.producto-mas-imagenes > img {
+    width: 120px;
+}
+
+.producto-imagenes {
+    width: 55%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-imagenes > img{
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.producto-textos {
+    padding: 1em;
+    background-color: #fff;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.texto-nombre {
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+}
+.texto-cod-prod {
+    font-size: 14px;
+    color: #999999;
+}
+
+.unico-metodo {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.texto-mdp {
+        color: #0077f9;
+        font-size: 18px;
+}
+.texto-precio {
+    color: #0077f9;
+    font-size: 24px;
+}
+.texto-cuotas {
+    color: #0077f9;
+    font-size: 18px;
+}
+
+.en-stock {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #3E9B01;
+    font-size: 10px;
+    color: #fff;
+}
+
+.poco-stock {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ffa500;
+    font-size: 10px;
+    color: #000;
+}
+
+/* CANTIDAD BUTTONS */
+
+.botones-cantidad {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    padding: 20px 20px 10px 20px;
+    width: 250px;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(216, 216, 216);
+    margin: 0 auto
+    
+
+}
+
+.cantidad {
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    padding: 5px 40px;
+}
+
+.menos, .mas {
+    color: #0077f9;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 10px;
+}
+.comprar:hover, .agregar:hover {
+    background-color: #004894; 
+    border: none;
+    color: #fff;
+  }
+
+.comprar {
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077f9;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.agregar {
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #0077f9;
+    border-radius: 5px;
+    border: 1px solid #0077f9;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.links > p {
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+    
+}
+
+.link-inicio, .link-categoria {
+    cursor: pointer;
+}
+
+.desabilitado {
+    background-color: #bbbbbb;
+}
+
+.descripcion {
+    width: 80%;
+    margin: 1px auto 0 auto;
+    background-color: #fff;
+}
+
+.descripcion p {
+    background-color: #fff;
+    padding: 30px 15px
+}
+
+.texto-prod-rel {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px 0;
+}
+.productos-relacionados {
+    background-color: #fff;
+    width: 80%;
+    margin: 1px auto 0 auto;
+    padding: 0 20px;
+}
+.container-productos-relacionado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 5px;
+}
+
+.card-producto-relacionado {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.card-producto-relacionado:hover {
+    box-shadow: 0px 0px 5px #6d6d6d;
+}
+
+.card-producto-relacionado > img{
+    width: 100%;
+    cursor: pointer;
+}
+.prod-rel-nombre {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.prod-rel-precio {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0077f9;
+}
+
+.prod-rel-btn {
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid #0077f9;
+    color: #0077f9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.prod-rel-btn:hover {
+    background-color: #004894; 
+    border: none;
+    color: #fff;
+  }
+  

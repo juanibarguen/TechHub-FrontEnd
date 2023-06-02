@@ -1,0 +1,74 @@
+<div class="container-img">
+    <img class="subcategoria-default" src="assets/subcategoria_default.jpg" alt="">
+
+</div>
+
+
+<section class="container-major">
+    <section class="container">
+
+        <div class="left">
+            <div class="categorias">
+                <a routerLink="/productos" class="categorias-text" >Categorías</a>
+
+                <a [routerLink]="['/productos', 'motherboards']">Motherboards</a>
+                <a [routerLink]="['/productos', 'procesadores']">Procesadores</a>
+                <a [routerLink]="['/productos', 'gabinetes']">Gabinetes</a>
+                <a [routerLink]="['/productos', 'almacenamiento']">Almacenamiento</a>
+                <a [routerLink]="['/productos', 'fuentes']">Fuentes</a>
+                <a [routerLink]="['/productos', 'placas-de-video']">Placas de video</a>
+                <a [routerLink]="['/productos', 'perifericos']">Periféricos</a>
+                <a [routerLink]="['/productos', 'monitores']">Monitores</a>
+                <a [routerLink]="['/productos', 'memorias-ram']">Memorias RAM</a>
+
+            </div>
+
+            <div class="img-categorias">
+                <!-- <img src="./categorias-img2.jpeg" alt=""> -->
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div class="filtros">
+                <select class="form-select" [(ngModel)]="filtro" (ngModelChange)="aplicarFiltro()">
+                    <option value='Todos'>Todos</option>
+                    <option value="Destacados">Destacados</option>
+                    <option value="MayorPrecio">Mayor precio</option>
+                    <option value="MenorPrecio">Menor precio</option>
+                </select>
+            </div>
+
+            <div class="componentes">
+                <div class="componentes-card" *ngFor="let componente of componentes">
+                    <div class="product-imagen" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]" >
+                        <img [src]="componente.imagen">
+                    </div>
+                    <div class="product-texts">
+
+                        <p class="product-nombre"[routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">{{ componente.nombre }}</p>
+
+                        <div class="stock">
+                            <p class="poco-stock" *ngIf="componente.stock < 20">Poco stock</p>
+                            <p class="en-stock" *ngIf="componente.stock >= 20">En stock</p>
+                        </div>
+
+                        <p class="product-precio">${{ componente.precio.toFixed(3) }}</p>
+
+                        <div class="product-buttons">
+                            <a class="comprar">Comprar</a>
+                            <a class="agregar" (click)="agregarAlCarrito(componente)">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mensaje-vacio" *ngIf="!componentes || componentes.length === 0">
+                No se encontraron productos en esta categoría.
+            </div>
+        </div>
+
+    </section>
+</section>
+
+<app-footer></app-footer>

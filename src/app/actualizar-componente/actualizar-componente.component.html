@@ -1,0 +1,120 @@
+
+<div class="container-actualizar-componente">
+    <div class="texto-agregar-componente">
+        <h3>Actualizar producto</h3>
+    </div>
+<div class="edit-product">
+
+
+         <form (ngSubmit)="guardarCambios()">
+
+
+
+            <div class="form-nombre">
+                <p for="">Nombre:</p>
+                <input type="text" id="nombre" [(ngModel)]="componente.nombre" name="nombre">
+            </div>
+            <div class="container">
+            <section class="form-izquierda">
+
+
+        
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select class="form-control" id="categoria" [(ngModel)]="componente.categoria" name="categoria">
+                    <option value="almacenamiento">Almacenamiento</option>
+                    <option value="placas-de-video">Placas de video</option>
+                    <option value="motherboards">Motherboards</option>
+                    <option value="memorias-ram">Memorias RAM</option>
+                    <option value="perifericos">Perifericos</option>        
+                    <option value="monitores">Monitores</option>
+                    <option value="gabinetes">Gabinetes</option>        
+
+                </select>
+              </div>
+
+
+            <div class="form-group">
+                <label for="subcategoria">Sub-categoría:</label>
+                <select class="form-control" id="subcategoria" name="subcategoria" disabled="">
+                    <option value="almacenamiento">Almacenamiento</option>
+                    <option value="placas-de-video">Placas de video</option>
+                    <option value="motherboards">Motherboards</option>
+                    <option value="memorias-ram">Memorias RAM</option>
+                    <option value="perifericos">Perifericos</option>        
+                    <option value="monitores">MONITORES</option>
+                </select>
+              </div>
+
+             <div class="form-group">
+                <label for="">URL Imagen:</label>
+                <input type="text"
+                class=" "
+                id="imagen"
+                [(ngModel)] = "componente.imagen"
+                name = "imagen">
+            </div>
+
+            
+            <div class="form-group">
+                <label for="destacado">Es un producto destacado?</label>
+                <div class="container-input">
+                  <div class="container-input-true">
+                    <input type="radio" class="option-input true izquierda" id="destacado-true" name="destacado" value="true" [(ngModel)]="componente.destacado" >
+                    <label for="destacado-true">Si</label>
+                  </div>
+                  <div class="container-input-false">
+                    <input type="radio" class="option-input false derecha" id="destacado-false" name="destacado" value="false" [(ngModel)]="componente.destacado" >
+                    <label for="destacado-false">No</label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- DISCO HDD 1TB WD BLUE SATA III 3.5" -->
+                
+              <!-- MEMORIA 16GB (2X8GB) DDR4 3200 CORSAIR VENGEANCE PRO RGB -->
+        </section>
+
+        <section class="form-derecha">
+
+            <div class="form-group">
+                <label for="">Precio:</label>
+                <input type="text"
+                class=""
+                id="precio"
+                [(ngModel)] = "componente.precio"
+                name = "precio">
+            </div>
+
+            <div class="form-group">
+                <label for="">Cantidad en stock:</label>
+                <input type="text"
+                class=""
+                id="stock"
+                [(ngModel)] = "componente.stock"
+                name = "stock"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="">Descripcion:</label>
+                <input type="textarea"
+                class="input-description"
+                id="descripcion"
+                [(ngModel)] = "componente.descripcion"
+                name = "descripcion"
+                >
+            </div>
+            
+        </section>
+    </div>
+    <div class="btn">
+        <button class="guardar-cambios" >Guardar cambios</button>
+
+        <button routerLink="/administrador" class="volver">Volver a la lista</button>
+
+    </div>
+        </form> 
+
+    
+</div>

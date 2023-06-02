@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerce-v2';
-}
+  constructor( ) {}
+
+    ngOnInit() {
+    }
+
+  }
+  

@@ -1,1 +1,43 @@
-<p>seccion-carrito works!</p>
+ <section class="container-carrito">
+<div class="carrito-de-compras">
+    <h3 class="texto-finalizar-compras">Finalizar Compras</h3>
+    <div class="texto-productos" *ngIf="componentesCarrito.length > 0">
+      <p class="productos-cantidad">Cantidad</p>
+      <p class="productos-precio">Precio</p>
+    </div>
+    
+    <div class="container" *ngIf="componentesCarrito.length > 0">
+  
+      <div class="container-product">
+      <div class="product" *ngFor="let componente of componentesCarrito ">
+        <div class="product-imagen"><img [src]="componente.imagen"></div>
+        <div class="product-nombre">{{componente.nombre}}</div>
+        <div class="detalles-producto">
+          <div class="product-cantidad">
+              <div class="cantidad">
+                <p (click)="restarCantidad(componente)" >-</p>
+                <p>{{componente.cantidad}}</p>
+                <p  (click)="sumarCantidad(componente)" >+</p>
+              </div>
+              <div class="disponibles"><p>{{componente.stock}} disponibles</p></div>
+          </div>
+        <div class="product-precio">$ {{componente.precioAc.toFixed(3)}}</div>
+      </div>
+      </div>
+      </div>
+  
+    </div>
+
+    <div class="comprar" *ngIf="componentesCarrito.length > 0">
+      <p class="texto-precio-total">Total: $ {{ calcularPrecioTotal().toFixed(3) }}</p>
+      <button class="boton-comprar">Comprar</button> 
+      </div>
+
+    <div class="carrito-vacio" *ngIf="componentesCarrito.length === 0" >
+      <p class="">No hay productos en el carrito.</p>
+      <button routerLink="/productos">Ver productos</button>
+    </div>
+  </div>
+  </section>  
+
+  <app-footer></app-footer>

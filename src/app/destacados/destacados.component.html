@@ -1,20 +1,19 @@
 
 
-
-<h2 class="texto-descatado" id="texto-descatado">Destacado</h2>
+<h2 class="texto-descatado" id="texto-descatado">Destacados</h2>
 <div class="row">
-  <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left" aria-hidden="true"></i></button>
+  <button role="button" id="flecha-izquierda" class="flecha-izquierda" (click)="moverCarousel(-2)"><i class="fas fa-angle-left" aria-hidden="true"></i></button>
 
-  <div class="carousel">
-    <div class="card-container" *ngFor="let componente of componentes">
-      <div class="card" *ngIf="componente.destacado">
-            <img [src]="componente.imagen" alt="{{ componente.nombre }}">
-            <h3 class="card-title">{{ componente.nombre }}</h3>
-            <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>
-            <a href="#" (click)="agregarAlCarrito(componente)"><p>Agregar</p></a >
+  <div class="carousel" id="carrousel" #carrousel>
+    <div class="card-container" *ngFor="let componente of filtrarDestacados()">
+      <div class="card">
+        <img [src]="componente.imagen" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">
+        <h3 class="card-title" [routerLink]="['/producto', componente.categoria,componente.id, nombreFormateado(componente.nombre)]">{{ componente.nombre }}</h3>
+        <p class="card-subtitle">$ {{componente.precio.toFixed(3) }}</p>
+        <a (click)="agregarAlCarrito(componente)"><p>Agregar</p></a>
       </div>
-      </div> 
     </div>
-    <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right" aria-hidden="true"></i></button>
-
   </div>
+
+  <button role="button" id="flecha-derecha" class="flecha-derecha" (click)="moverCarousel(2)"><i class="fas fa-angle-right" aria-hidden="true"></i></button>
+</div>
