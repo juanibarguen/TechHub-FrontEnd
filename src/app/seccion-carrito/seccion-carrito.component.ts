@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponenteService } from '../componente.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-seccion-carrito',
@@ -9,12 +10,14 @@ import { ComponenteService } from '../componente.service';
 export class SeccionCarritoComponent {
   componentesCarrito: any[] = [];
 
-  constructor(private componenteService: ComponenteService) {}
+  constructor(private componenteService: ComponenteService, private titleService: Title) {}
 
   ngOnInit() {
     this.componentesCarrito = this.componenteService.obtenerComponentesCarrito();
     console.log(this.componentesCarrito);
     
+    this.titleService.setTitle('Finalizar Compra');
+
   }
   
   restarCantidad(componente: any): void {

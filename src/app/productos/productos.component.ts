@@ -2,77 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Componente } from '../componente';
 import { ComponenteService } from '../componente.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
-// export class ProductosComponent implements OnInit {
-//   categoria: string;
-//   componentes: Componente[];
-//   filtro: string;
-
-//   constructor(
-//     private componenteService: ComponenteService,
-//     private route: ActivatedRoute,
-//     private router: Router
-//   ){ }
-  
-//   ngOnInit(): void {
-//     this.route.params.subscribe(params => {
-//       this.categoria = params['categoria'];
-//       this.obtenerComponentes();
-//     });
-
-//     this.filtro = 'Todos'; // Asignar valor por defecto a la propiedad filtro
-//     this.aplicarFiltro(); // Aplicar filtro al cargar la página con el valor por defecto
-    
-//     this.obtenerComponentesCarrito()
-//   }
-
-//   obtenerComponentesCarrito() {
-//       const componentesCarrito = this.componenteService.obtenerComponentesCarrito();
-//   }
-
-//   obtenerComponentes() {
-//     if (this.categoria) {
-//       this.componenteService.obtenerListaDeComponentes().subscribe(data => {
-//         this.componentes = data.filter(componente => componente.categoria === this.categoria);
-//         console.log(this.componentes);
-
-//       });
-//     } else {
-//       this.componenteService.obtenerListaDeComponentes().subscribe(data => {
-//         this.componentes = data;
-//         console.log(this.componentes);
-//       });
-//     }
-//   }
-
-//   agregarAlCarrito(componente: Componente) {
-//     this.componenteService.agregarAlCarrito(componente);
-//   }
-
-//   aplicarFiltro() {
-//     if (this.filtro === 'Destacados') {
-//       this.componentes = this.componentes.filter(componente => componente.destacado);
-//     } else if (this.filtro === 'MayorPrecio') {
-//       this.componentes = this.componentes.sort((a, b) => b.precio - a.precio);
-//     } else if (this.filtro === 'MenorPrecio') {
-//       this.componentes = this.componentes.sort((a, b) => a.precio - b.precio);
-//     }
-//   }
-
-//   nombreFormateado(nombre: string): string {
-//     return nombre.toLowerCase().replace(/\s+/g, '-');
-//   }
-
-
-// }
-
-
-
 
 export class ProductosComponent implements OnInit {
   categoria: string;
@@ -83,13 +19,17 @@ export class ProductosComponent implements OnInit {
   constructor(
     private componenteService: ComponenteService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ){ }
   
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.categoria = params['categoria'];
       this.obtenerComponentes();
+
+      this.titleService.setTitle('Productos');
+
     });
 
     this.filtro = 'Todos'; // Asignar valor por defecto a la propiedad filtro
@@ -106,6 +46,10 @@ export class ProductosComponent implements OnInit {
         this.componentesOriginales = data; // Guardar la lista original de componentes
         this.componentes = data.filter(componente => componente.categoria === this.categoria);
         console.log(this.componentes);
+
+          this.titleService.setTitle(this.transformarUpper(this.categoria));
+
+
         this.aplicarFiltro(); // Aplicar filtro a la lista de componentes específica de la categoría seleccionada
       });
     } else {
@@ -134,5 +78,9 @@ export class ProductosComponent implements OnInit {
 
   nombreFormateado(nombre: string): string {
     return nombre.toLowerCase().replace(/\s+/g, '-');
+  }
+
+  transformarUpper(categoria: string): string {
+    return categoria.replace(/-/g, ' ').toUpperCase();
   }
 }
