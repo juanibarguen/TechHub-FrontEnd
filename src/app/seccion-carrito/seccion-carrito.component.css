@@ -280,3 +280,15 @@
     background-color: #fff;
     border-radius: 5px;
 } */
+
+
+.cantidad-seleccionada {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-limite {
+    color: #878787;
+}

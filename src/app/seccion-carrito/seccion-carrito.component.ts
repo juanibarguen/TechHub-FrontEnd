@@ -28,10 +28,19 @@ export class SeccionCarritoComponent {
       }
     }
   }
+
+  verificarCantidad(componente: any): boolean {
+    return componente.cantidad >= componente.stock;
+  }  
   
   sumarCantidad(componente: any): void {
-    componente.cantidad++;
-    componente.precioAc = componente.precio * componente.cantidad;
+    if (this.verificarCantidad(componente)) {
+      console.log('La cantidad seleccionada supera el stock disponible.');
+      alert('No hay suficiente stock')
+    } else {
+      componente.cantidad++;
+      componente.precioAc = componente.precio * componente.cantidad;
+    }
   }
 
   calcularPrecioTotal(): number {
