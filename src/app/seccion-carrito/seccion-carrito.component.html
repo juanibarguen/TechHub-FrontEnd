@@ -16,8 +16,8 @@
           <div class="product-cantidad">
               <div class="cantidad">
                 <p (click)="restarCantidad(componente)" >-</p>
-                <p>{{componente.cantidad}}</p>
-                <p  (click)="sumarCantidad(componente)" >+</p>
+                <p class="cantidad-seleccionada">{{componente.cantidad}}</p>
+                <p [class.cantidad-limite]="verificarCantidad(componente)"(click)="sumarCantidad(componente)" >+</p>
               </div>
               <div class="disponibles"><p>{{componente.stock}} disponibles</p></div>
           </div>
@@ -40,4 +40,4 @@
   </div>
   </section>  
 
-  <app-footer></app-footer>
+  <app-footer>
