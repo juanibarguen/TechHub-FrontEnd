@@ -21,7 +21,7 @@
 
         <div class="producto-textos">
             <p class="texto-nombre">{{componente.nombre}}</p>
-            <p class="texto-cod-prod">codigo de producto: 4529001</p>
+            <p class="texto-cod-prod">Codigo de producto: 4529001</p>
             <p class="texto-mdp">Precio efectivo o transferencia:</p>
             <p class="unico-metodo">Unico metodo de pago por el momento</p>
             <p class="texto-precio">${{componente.precio.toFixed(3)}}</p>
@@ -37,7 +37,7 @@
               </div>
             <div class="botones">
                 <a href="#" class="comprar" [class.desabilitado]="cantidad == 0">Comprar</a>
-                <a href="#" class="agregar">Agregar al carrito</a>
+                <a class="agregar" (click)="agregarAlCarrito(componente)">Agregar al carrito</a>
             </div>
         </div>
     </div>

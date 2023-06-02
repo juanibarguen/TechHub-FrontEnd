@@ -126,6 +126,7 @@
     color: #0077f9;
     font-size: 30px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .botones {
@@ -163,6 +164,7 @@
     color: #0077f9;
     border-radius: 5px;
     border: 1px solid #0077f9;
+    cursor: pointer;
 }
 
 .links {

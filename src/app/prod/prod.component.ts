@@ -79,4 +79,9 @@ export class ProdComponent {
     return nombre.toLowerCase().replace(/\s+/g, '-');
   }
 
+  agregarAlCarrito(componente: any) {
+    this.componenteService.agregarAlCarrito(componente);
+
+  }
+
 }
