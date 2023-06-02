@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Componente } from '../componente';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComponenteService } from '../componente.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+// import { DestacadosComponent } from '../destacados/destacados.component';
+
 
 @Component({
   selector: 'app-actualizar-componente',
@@ -20,16 +22,9 @@ export class ActualizarComponenteComponent implements OnInit {
     private componenteService: ComponenteService,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) { }
 
-  // ngOnInit(): void {
-  //   this.id = this.route.snapshot.params['id'];
-  //   this.componenteService.obtenerComponentePorId(this.id).subscribe(dato => {
-  //     this.componente = dato;
-      
-  //   }, error => console.log(error));
-  // }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -49,35 +44,26 @@ export class ActualizarComponenteComponent implements OnInit {
     );
   }
 
-  // guardarCambios() {
-  //   this.componenteService.actualizarComponente(this.componente.id, this.componente).subscribe(
-  //     (response: any) => {
-  //       console.log('Elemento actualizado exitosamente');
-  //       this.router.navigate(['/administrador']);
-  //       console.log(this.componente);
-        
-  //       Swal.fire('Componente actualizado',`El componente ${this.componente.nombre} ha sido actualizado con exito`,`success`);
-  //     },
-  //     (error: any) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
 
   guardarCambios() {
     this.componenteService.actualizarComponente(this.componente.id, this.componente).subscribe(
       (response: any) => {
+        // Guardar cambios exitosos
         console.log('Elemento actualizado exitosamente');
-        this.router.navigate(['/administrador']);
-        console.log(this.componente);
   
         Swal.fire('Componente actualizado', `El componente ${this.componente.nombre} ha sido actualizado con éxito`, `success`);
+  
+        this.router.navigate([`administrador/`])
+
+
       },
       (error: any) => {
         console.error(error);
       }
     );
   }
+  
+  
   
 
   

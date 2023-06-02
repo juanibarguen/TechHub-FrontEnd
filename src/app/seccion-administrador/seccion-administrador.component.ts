@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
 import { ComponenteService } from '../componente.service';
 import { Componente } from '../componente';
@@ -14,6 +14,7 @@ export class SeccionAdministradorComponent implements OnInit {
 
   componentes: Componente[];
   componentesFiltrados: Componente[];
+  
 
   selectedCategory: string = '';
 
@@ -39,13 +40,28 @@ export class SeccionAdministradorComponent implements OnInit {
     });
   }
 
-  eliminarComponente(id: number) {
-    if (confirm('¿Desea eliminar el componente de la base de datos?')) {
-      this.componenteService.eliminarComponente(id).subscribe(dato => {
-        // console.log(dato);
-        this.obtenerComponente()
-      })
-    }
+  
+
+  eliminarComponente(id: number, nombre: string) {
+
+    Swal.fire({
+      title: 'Deseas eliminar el componente '+nombre+ '?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      denyButtonText: `No eliminar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.componenteService.eliminarComponente(id).subscribe(dato => {
+          // console.log(dato);
+          this.obtenerComponente()
+        })
+        Swal.fire('Eliminado!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('No se ha eliminado el componente', '', 'info')
+      }
+    })
   } 
 
   actualizarComponente(id:number) {
@@ -57,7 +73,8 @@ export class SeccionAdministradorComponent implements OnInit {
       this.componentesFiltrados = this.componentes;
     } else {
       this.componentesFiltrados = this.componentes.filter(componente => componente.categoria === this.selectedCategory);
-      this.componentesFiltrados = this.componentes.filter(componente => componente.categoria === this.selectedCategory);
+      
+      // this.componentesFiltrados = this.componentes.filter(componente => this.transformarUpper(componente.categoria)  === this.selectedCategory);
 
     }
   }
@@ -67,7 +84,12 @@ export class SeccionAdministradorComponent implements OnInit {
   }
 
   transformarUpper(categoria: string): string {
-    return categoria.replace(/-/g, ' ').toUpperCase();
+    
+    const palabras = categoria.split('-');
+    const palabrasMayusculas = palabras.map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1));
+    return palabrasMayusculas.join(' ');
   }
+  
+
 
 }

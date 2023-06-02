@@ -88,7 +88,44 @@
     line-height:40px;
   }
 
+  .btn {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
 
+
+  .guardar-cambios {
+    padding: 1em;
+    background-color: #0077f9;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+}
+
+.guardar-cambios:hover {
+  background-color: #015dbf;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.volver:hover {
+  background-color: #015dbf;
+}
+
+.volver {
+  background-color: #003369;
+  width: 140px;
+  padding: .9em;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.btn > button {
+  cursor: pointer;
+}
   
 
   

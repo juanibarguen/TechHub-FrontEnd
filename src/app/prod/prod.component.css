@@ -133,6 +133,11 @@
     width: 100%;
     row-gap: 10px;
 }
+.comprar:hover, .agregar:hover {
+    background-color: #004894; 
+    border: none;
+    color: #fff;
+  }
 
 .comprar {
     height: 45px;
@@ -197,7 +202,7 @@
 .texto-prod-rel {
     font-size: 24px;
     font-weight: 700;
-    padding-top: 20px;
+    padding: 20px 0;
 }
 .productos-relacionados {
     background-color: #fff;
@@ -209,6 +214,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    column-gap: 5px;
 }
 
 .card-producto-relacionado {
@@ -217,6 +223,12 @@
     flex-direction: column;
     justify-content: space-between;
     height: 400px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.card-producto-relacionado:hover {
+    box-shadow: 0px 0px 5px #6d6d6d;
 }
 
 .card-producto-relacionado > img{
@@ -243,3 +255,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.prod-rel-btn:hover {
+    background-color: #004894; 
+    border: none;
+    color: #fff;
+  }
+  

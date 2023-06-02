@@ -2,7 +2,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Componente } from './componente';
 import { Router } from '@angular/router';
 
@@ -24,6 +24,12 @@ export class ComponenteService {
       this.componentes = data;
     });
   }
+
+  obtenerComponentesDestacados(): Componente[] {
+  return this.componentes.filter(componente => componente.destacado);
+}
+
+
 
   obtenerListaDeComponentes(): Observable<Componente[]> {
     return this.httpClient.get<Componente[]>(`${this.baseURL}`);
@@ -72,11 +78,22 @@ export class ComponenteService {
     return this.httpClient.post(`${this.baseURL}`, componente)
   }
 
-  actualizarComponente(id: number, componente: Componente): Observable<Object> {
-    componente.destacado == true ? 1 : 0 
-    return this.httpClient.put(`${this.baseURL}/${id}`, componente);
+  filtrarDestacados(): Componente[] {
+    return this.componentes.filter(componente => componente.destacado);
   }
   
-  
 
+  actualizarComponente(id: number, componente: Componente): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${id}`, componente)
+      .pipe(
+        tap(() => {
+          // Emitir evento de actualización de componentes
+          this.componenteAgregado.emit();
+        })
+      );
+}
+
+// buscarComponentes(termino: string): Observable<Componente[]> {
+//   return this.httpClient.get<Componente[]>(`${this.baseURL}/buscar?termino=${termino}`);
+// }
 }

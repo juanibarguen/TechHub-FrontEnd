@@ -25,8 +25,10 @@ export class ProdComponent {
     private titleService: Title
      ){ }
 
-     ngOnInit(): void {
-
+ 
+    
+    
+    ngOnInit(): void {
       this.route.params.subscribe(params => {
         this.id = +params['id'];
         this.nombre = params['nombre'];
@@ -35,20 +37,18 @@ export class ProdComponent {
         this.componenteService.obtenerListaDeComponentes().subscribe(componentes => {
           // Buscar el componente por su ID
           this.componente = componentes.find(componente => componente.id === this.id);
-          // console.log(this.componente);
-          this.valorCuotas = this.componente.precio / 12
-          // console.log(this.valorCuotas.toFixed(3));
-          console.log(this.componente.categoria);
-
-          this.productosRelacionados = componentes.filter(componente => componente.categoria === this.componente.categoria);
-        this.productosRelacionados = this.productosRelacionados.slice(0, 4);
-          
+          this.valorCuotas = this.componente.precio / 12;
+    
+          this.productosRelacionados = componentes.filter(componente =>
+            componente.categoria === this.componente.categoria && componente.id !== this.id
+          );
+          this.productosRelacionados = this.productosRelacionados.slice(0, 4);
         });
       });
-      this.titleService.setTitle(this.transformarUpper(this.nombre));
-
-    }
     
+      this.titleService.setTitle(this.transformarUpper(this.nombre));
+    }
+
     
   obtenerComponentes() {
       this.componenteService.obtenerListaDeComponentes().subscribe(data => {

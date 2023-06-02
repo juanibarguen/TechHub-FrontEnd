@@ -16,6 +16,8 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProdComponent } from './prod/prod.component';
 import { ActualizarComponenteComponent } from './actualizar-componente/actualizar-componente.component';
 import { MarcasComponent } from './marcas/marcas.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: SeccionHomeComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     ProductosComponent,
     ProdComponent,
     ActualizarComponenteComponent,
-    MarcasComponent
+    MarcasComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

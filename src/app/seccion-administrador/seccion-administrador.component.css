@@ -1,8 +1,9 @@
 
 section {
     width: 100%;
-    height: 100vh;
+    padding-bottom: 2em;
     background-color: #bebcbc;
+    min-height: 100vh;
 }
 
 .container {
@@ -14,6 +15,8 @@ section {
     margin: 0 auto;
     /* row-gap: 10px; */
 }
+
+
 
 .btn-admin {
     width: 90%;
@@ -45,7 +48,7 @@ section {
     height: 100%;
 }
 
-.productos {
+.producto {
     width: 100%;
     height: 45px;
     display: flex;
@@ -53,7 +56,7 @@ section {
     justify-content: space-between;
     background-color: #fff;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 
@@ -126,23 +129,36 @@ section {
     width: 80px;
     display: flex;
     justify-content: center;
-    column-gap: 2px;
+    column-gap: 8px;
 }
 
 .product-acciones > button {
     width: 30px;
-    height: 20px;
+    height: 30px;
     cursor: pointer;
 }
 
+.product-acciones > button > svg {
+    width: 20px;
+    height: 30px;
+}
+
 .acciones-modificar {
-    background-color: #B7D1DB;
+    background-color: #4272FA;;
     border: none;
     border-radius: 2px;
 }
 
+.acciones-modificar svg {
+    fill: #fff;
+}
+
+.acciones-eliminar svg {
+    fill: #fff;
+}
+
 .acciones-eliminar {
-    background-color: #F39A91;
+    background-color: #FE3F61;
     border: none;
     border-radius: 2px;
 }
@@ -153,9 +169,11 @@ section {
 
 
 
+
+
+
+
 .container-list {
-    height: 440px;
-    overflow-y:scroll;
   white-space: nowrap;
   background-color: #EBEBEB;
 }
@@ -175,3 +193,6 @@ section {
   .container-list::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Color del pulgar de desplazamiento al pasar el cursor por encima */
   }
+
+
+
