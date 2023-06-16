@@ -136,3 +136,12 @@
 .nav-links-router > a:hover {
     color:#2085f1;
 }
+
+.container-input {
+    position: relative;
+}
+
+.result-list {
+    position: absolute;
+    background-color: grey;
+}

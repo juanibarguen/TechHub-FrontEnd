@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ComponenteService } from './componente.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent {
   // title = 'ecommerce-v2';
-  constructor(private titleService:Title ) {}
+  searchTerm: string; // Variable para almacenar el término de búsqueda
+  resultados: any[]; // Variable para almacenar los resultados de la búsqueda
+
+  constructor(private titleService:Title, private componenteService: ComponenteService ) {}
 
 
     ngOnInit() {
@@ -16,5 +20,9 @@ export class AppComponent {
 
     }
 
+    buscar(): void {
+      this.resultados = this.componenteService.buscarComponentes(this.searchTerm);
+    }
+    
   }
   
