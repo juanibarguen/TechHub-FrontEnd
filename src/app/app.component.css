@@ -145,12 +145,24 @@
     position: absolute;
     background-color: rgb(255, 255, 255);
     width: 500px;
+    z-index: 200;
+    max-height: 500px;
+    overflow: auto;
 }
 
 .result-list ul {
     list-style: none;
 }
+.result-list ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
 
+.result-list ul li:hover {
+    background-color: #b6b6b6;
+}
 .result-list ul li img{
     width: 60px;
 }
