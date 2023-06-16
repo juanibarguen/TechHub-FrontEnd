@@ -143,5 +143,18 @@
 
 .result-list {
     position: absolute;
-    background-color: grey;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+}
+
+.result-list ul {
+    list-style: none;
+}
+
+.result-list ul li img{
+    width: 60px;
+}
+
+.not-result {
+    padding: 100px 50px;
 }
