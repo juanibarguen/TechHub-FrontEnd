@@ -35,7 +35,6 @@ export class DestacadosComponent implements OnInit {
     return this.componenteService.filtrarDestacados();
   }
 
-
   // movilidad del carrousel con las flechas
   moverCarousel(direccion: number) {
     const carouselElement = this.elementRef.nativeElement.querySelector('#carrousel');

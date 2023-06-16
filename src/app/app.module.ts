@@ -17,6 +17,7 @@ import { ProdComponent } from './prod/prod.component';
 import { ActualizarComponenteComponent } from './actualizar-componente/actualizar-componente.component';
 import { MarcasComponent } from './marcas/marcas.component';
 import { FooterComponent } from './footer/footer.component';
+import { DataServices } from './seccion-home/data.service';
 
 
 const appRoutes: Routes = [
@@ -56,7 +57,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     
   ],
-  providers: [],
+  providers: [DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

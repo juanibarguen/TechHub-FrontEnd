@@ -29,8 +29,6 @@ export class ComponenteService {
   return this.componentes.filter(componente => componente.destacado);
 }
 
-
-
   obtenerListaDeComponentes(): Observable<Componente[]> {
     return this.httpClient.get<Componente[]>(`${this.baseURL}`);
   }
@@ -81,7 +79,6 @@ export class ComponenteService {
   filtrarDestacados(): Componente[] {
     return this.componentes.filter(componente => componente.destacado);
   }
-  
 
   actualizarComponente(id: number, componente: Componente): Observable<Object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, componente)
@@ -93,7 +90,10 @@ export class ComponenteService {
       );
 }
 
-// buscarComponentes(termino: string): Observable<Componente[]> {
-//   return this.httpClient.get<Componente[]>(`${this.baseURL}/buscar?termino=${termino}`);
-// }
+buscarComponentes(termino: string): Componente[] {
+  // Utiliza el método filter() para buscar una relación entre el término de búsqueda y los nombres de los componentes
+  return this.componentes.filter(componente => componente.nombre.toLowerCase().includes(termino.toLowerCase()));
+}
+
+
 }
