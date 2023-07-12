@@ -1,7 +1,7 @@
 
 section {
     width: 100%;
-    padding-bottom: 2em;
+    padding: 50px 100px;
     /* background-color: #d9d9d9; */
     min-height: 100vh;
 }
@@ -19,10 +19,11 @@ section {
 
 
 .btn-admin {
-    height: 50px;
+    height: 35px;
     display: flex;
     flex-direction: row;
     column-gap: 10px;
+    margin-bottom: 15px;
 }
 
 .btn-admin > button {
@@ -65,17 +66,19 @@ section {
 }
 
 .producto {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     height: 65px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .producto-principales {
     display: grid;
     grid-template-columns: 50px 1fr;
     /* background-color: lightblue; */
-    width: 450px;
+    /* width: 450px; */
 }
 
 .producto-nombre {
@@ -85,6 +88,7 @@ section {
 
 .producto-datos {
     display: flex;
+    column-gap: 10px;
 }
 
 .producto-mas {
@@ -98,9 +102,9 @@ section {
 
 .producto-mas {
     /* background-color: lightgoldenrodyellow; */
-    width: 400px;
+    /* width: 400px; */
     display: grid;
-  grid-template-columns: 150px 130px 1fr;
+  grid-template-columns: 200px 200px 1fr;
   grid-gap: 10px; /* Espacio entre las columnas */
   align-items: center;
 }
@@ -119,6 +123,5 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 40px;
     row-gap: 15px;
 }
