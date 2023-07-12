@@ -81,3 +81,16 @@ section {
 .producto-mas {
     display: flex;
 }
+
+
+.product-acciones button svg {
+    height: 20px;
+}
+
+.producto-mas {
+    background-color: lightgoldenrodyellow;
+    width: 400px;
+    display: grid;
+  grid-template-columns: 150px 130px 1fr;
+  grid-gap: 10px; /* Espacio entre las columnas */
+}
