@@ -2,7 +2,7 @@
 section {
     width: 100%;
     padding-bottom: 2em;
-    background-color: #bebcbc;
+    background-color: #d9d9d9;
     min-height: 100vh;
 }
 
@@ -19,12 +19,10 @@ section {
 
 
 .btn-admin {
-    width: 90%;
     height: 50px;
     display: flex;
     flex-direction: row;
     column-gap: 10px;
-    padding: 10px 10px 10px 70px
 }
 
 .btn-admin > button {
@@ -48,19 +46,6 @@ section {
     height: 100%;
 }
 
-.producto {
-    width: 100%;
-    height: 45px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #fff;
-    align-items: center;
-    margin-bottom: 1px;
-}
-
-
-
 .btn-action {
     display: flex;
     flex-direction: row;
@@ -74,125 +59,25 @@ section {
     justify-content: center;
 }
 
-.titulos-componentes {
+
+.producto-imagen img {
+    width: 60px;
+}
+
+.producto {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 30px;
-    align-items: center;
-}
-.titulos-componentes > p{
-    font-size: 15px;
-    font-weight: 500;
 }
 
-
-.product-id {
-    width: 40px;
-    text-align: center;
-}
-
-.titulo-id {
-    width: 40px;
-    text-align: center;
-}
-
-.product-nombre {
+.producto-principales {
+    display: flex;
+    background-color: lightblue;
     width: 450px;
-    font-size: 12px;
 }
 
-.titulo-nombre {  
-      width: 450px;
-    /* font-size: 12px; */
-}
-
-.product-categoria {
-    width: 140px;
-    font-size: 13px;
-}
-
-.titulo-categoria {
-    width: 140px;
-}
-
-.product-precio {
-    width: 50px;
-    font-size: 13px;
-}
-
-.titulo-acciones {
-    width: 80px;
-}
-
-.product-acciones {
-    width: 80px;
+.producto-datos {
     display: flex;
-    justify-content: center;
-    column-gap: 8px;
 }
 
-.product-acciones > button {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+.producto-mas {
+    display: flex;
 }
-
-.product-acciones > button > svg {
-    width: 20px;
-    height: 30px;
-}
-
-.acciones-modificar {
-    background-color: #4272FA;;
-    border: none;
-    border-radius: 2px;
-}
-
-.acciones-modificar svg {
-    fill: #fff;
-}
-
-.acciones-eliminar svg {
-    fill: #fff;
-}
-
-.acciones-eliminar {
-    background-color: #FE3F61;
-    border: none;
-    border-radius: 2px;
-}
-
-.titulo-precio {
-    width: 50px;
-}
-
-
-
-
-
-
-
-.container-list {
-  white-space: nowrap;
-  background-color: #EBEBEB;
-}
-
-.container-list::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
-  }
-  
-  .container-list::-webkit-scrollbar-track {
-    background-color: #F1F1F1; /* Color de fondo de la pista de desplazamiento */
-  }
-  
-  .container-list::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color del pulgar de desplazamiento */
-  }
-  
-  .container-list::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Color del pulgar de desplazamiento al pasar el cursor por encima */
-  }
-
-
-
